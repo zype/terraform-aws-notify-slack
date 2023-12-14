@@ -31,6 +31,7 @@ class AwsService(Enum):
 
     cloudwatch = "cloudwatch"
     guardduty = "guardduty"
+    systems_manager = "systems-manager"
 
 
 def decrypt_url(encrypted_url: str) -> str:
@@ -283,6 +284,11 @@ def format_ssm_run_command(message: Dict[str, Any], region: str) -> Dict[str, An
     :returns: formatted Slack message payload
     """
 
+    systems_manager_url = get_service_url(region=region, service="systems_manager")
+    run_command_url = systems_manager_url.replace(
+        "/home", f"/run-command/{message.get('commandId')}"
+    )
+
     return {
         "color": SSMRunCommandStatus[message.get("status")].value,
         "text": f"EC2 Run Command Notification {region}",
@@ -322,6 +328,11 @@ def format_ssm_run_command(message: Dict[str, Any], region: str) -> Dict[str, An
                 "title": "Detailed Status",
                 "value": f"`{message.get('detailedStatus')}`",
                 "short": True,
+            },
+            {
+                "title": "Link to Event",
+                "value": f"{run_command_url}",
+                "short": False,
             },
         ],
     }

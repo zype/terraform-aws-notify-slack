@@ -268,6 +268,11 @@ snapshots[
                     },
                     {"short": True, "title": "Status", "value": "`Failed`"},
                     {"short": True, "title": "Detailed Status", "value": "`Failed`"},
+                    {
+                        "short": False,
+                        "title": "Link to Event",
+                        "value": "https://console.aws.amazon.com/systems-manager/run-command/6f69316a-e502-5a20-99bc-2408825b6dee?region=us-east-1",
+                    },
                 ],
                 "text": "EC2 Run Command Notification us-east-1",
             }
@@ -314,6 +319,11 @@ snapshots[
                     },
                     {"short": True, "title": "Status", "value": "`Success`"},
                     {"short": True, "title": "Detailed Status", "value": "`Success`"},
+                    {
+                        "short": False,
+                        "title": "Link to Event",
+                        "value": "https://console.aws.amazon.com/systems-manager/run-command/6f69316a-e502-5a20-99bc-2408825b6dee?region=us-east-1",
+                    },
                 ],
                 "text": "EC2 Run Command Notification us-east-1",
             }
@@ -363,6 +373,11 @@ snapshots[
                         "short": True,
                         "title": "Detailed Status",
                         "value": "`DeliveryTimedOut`",
+                    },
+                    {
+                        "short": False,
+                        "title": "Link to Event",
+                        "value": "https://console.aws.amazon.com/systems-manager/run-command/6f69316a-e502-5a20-99bc-2408825b6dee?region=us-east-1",
                     },
                 ],
                 "text": "EC2 Run Command Notification us-east-1",
@@ -585,6 +600,11 @@ snapshots[
                     },
                     {"short": True, "title": "Status", "value": "`Success`"},
                     {"short": True, "title": "Detailed Status", "value": "`Success`"},
+                    {
+                        "short": False,
+                        "title": "Link to Event",
+                        "value": "https://console.aws.amazon.com/systems-manager/run-command/6f69316a-e502-5a20-99bc-2408825b6dee?region=us-east-1",
+                    },
                 ],
                 "text": "EC2 Run Command Notification us-east-1",
             }
