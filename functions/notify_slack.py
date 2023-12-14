@@ -296,7 +296,7 @@ def format_ssm_run_command(message: Dict[str, Any], region: str) -> Dict[str, An
             {
                 "title": "Document Name",
                 "value": f"`{message.get('documentName')}`",
-                "short": False,
+                "short": True,
             },
             {
                 "title": "Instance Id",
