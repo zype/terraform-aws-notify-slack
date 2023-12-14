@@ -306,7 +306,7 @@ def format_ssm_run_command(message: Dict[str, Any], region: str) -> Dict[str, An
             {
                 "title": "Instance Id",
                 "value": f"`{message.get('instanceId')}`",
-                "short": False,
+                "short": True,
             },
             {
                 "title": "Requested Time",
@@ -321,12 +321,12 @@ def format_ssm_run_command(message: Dict[str, Any], region: str) -> Dict[str, An
             {
                 "title": "Status",
                 "value": f"`{message.get('status')}`",
-                "short": False,
+                "short": True,
             },
             {
                 "title": "Detailed Status",
                 "value": f"`{message.get('detailedStatus')}`",
-                "short": False,
+                "short": True,
             },
         ],
     }
