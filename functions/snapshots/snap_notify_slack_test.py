@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 
 from snapshottest import Snapshot
 
+
 snapshots = Snapshot()
 
 snapshots[
@@ -232,6 +233,163 @@ snapshots[
 ]
 
 snapshots[
+    "test_event_get_slack_message_payload_snapshots event_ssm_run_command_event_failed.json"
+] = [
+    {
+        "attachments": [
+            {
+                "color": "danger",
+                "fallback": "EC2 Run Command Notification  us-east-1",
+                "fields": [
+                    {
+                        "short": False,
+                        "title": "Command Id",
+                        "value": "`6f69316a-e502-5a20-99bc-2408825b6dee`",
+                    },
+                    {
+                        "short": True,
+                        "title": "Document Name",
+                        "value": "`AWS-RunPatchBaseline`",
+                    },
+                    {
+                        "short": True,
+                        "title": "Instance Id",
+                        "value": "`i-99999999999999999`",
+                    },
+                    {
+                        "short": True,
+                        "title": "Requested Time",
+                        "value": "`2023-12-14T10:48:47.127Z`",
+                    },
+                    {
+                        "short": True,
+                        "title": "Event Time",
+                        "value": "`2023-12-14T10:52:22.114Z`",
+                    },
+                    {"short": True, "title": "Status", "value": "`Failed`"},
+                    {"short": True, "title": "Detailed Status", "value": "`Failed`"},
+                    {
+                        "short": False,
+                        "title": "Link to Event",
+                        "value": "https://console.aws.amazon.com/systems-manager/run-command/6f69316a-e502-5a20-99bc-2408825b6dee?region=us-east-1",
+                    },
+                ],
+                "text": "EC2 Run Command Notification us-east-1",
+            }
+        ],
+        "channel": "slack_testing_sandbox",
+        "icon_emoji": ":aws:",
+        "username": "notify_slack_test",
+    }
+]
+
+snapshots[
+    "test_event_get_slack_message_payload_snapshots event_ssm_run_command_event_success.json"
+] = [
+    {
+        "attachments": [
+            {
+                "color": "good",
+                "fallback": "EC2 Run Command Notification  us-east-1",
+                "fields": [
+                    {
+                        "short": False,
+                        "title": "Command Id",
+                        "value": "`6f69316a-e502-5a20-99bc-2408825b6dee`",
+                    },
+                    {
+                        "short": True,
+                        "title": "Document Name",
+                        "value": "`AWS-RunPatchBaseline`",
+                    },
+                    {
+                        "short": True,
+                        "title": "Instance Id",
+                        "value": "`i-99999999999999999`",
+                    },
+                    {
+                        "short": True,
+                        "title": "Requested Time",
+                        "value": "`2023-12-14T10:48:47.127Z`",
+                    },
+                    {
+                        "short": True,
+                        "title": "Event Time",
+                        "value": "`2023-12-14T10:52:22.114Z`",
+                    },
+                    {"short": True, "title": "Status", "value": "`Success`"},
+                    {"short": True, "title": "Detailed Status", "value": "`Success`"},
+                    {
+                        "short": False,
+                        "title": "Link to Event",
+                        "value": "https://console.aws.amazon.com/systems-manager/run-command/6f69316a-e502-5a20-99bc-2408825b6dee?region=us-east-1",
+                    },
+                ],
+                "text": "EC2 Run Command Notification us-east-1",
+            }
+        ],
+        "channel": "slack_testing_sandbox",
+        "icon_emoji": ":aws:",
+        "username": "notify_slack_test",
+    }
+]
+
+snapshots[
+    "test_event_get_slack_message_payload_snapshots event_ssm_run_command_event_timedout.json"
+] = [
+    {
+        "attachments": [
+            {
+                "color": "danger",
+                "fallback": "EC2 Run Command Notification  us-east-1",
+                "fields": [
+                    {
+                        "short": False,
+                        "title": "Command Id",
+                        "value": "`6f69316a-e502-5a20-99bc-2408825b6dee`",
+                    },
+                    {
+                        "short": True,
+                        "title": "Document Name",
+                        "value": "`AWS-RunPatchBaseline`",
+                    },
+                    {
+                        "short": True,
+                        "title": "Instance Id",
+                        "value": "`i-99999999999999999`",
+                    },
+                    {
+                        "short": True,
+                        "title": "Requested Time",
+                        "value": "`2023-12-14T10:48:47.127Z`",
+                    },
+                    {
+                        "short": True,
+                        "title": "Event Time",
+                        "value": "`2023-12-14T10:52:22.114Z`",
+                    },
+                    {"short": True, "title": "Status", "value": "`TimedOut`"},
+                    {
+                        "short": True,
+                        "title": "Detailed Status",
+                        "value": "`DeliveryTimedOut`",
+                    },
+                    {
+                        "short": False,
+                        "title": "Link to Event",
+                        "value": "https://console.aws.amazon.com/systems-manager/run-command/6f69316a-e502-5a20-99bc-2408825b6dee?region=us-east-1",
+                    },
+                ],
+                "text": "EC2 Run Command Notification us-east-1",
+            }
+        ],
+        "channel": "slack_testing_sandbox",
+        "icon_emoji": ":aws:",
+        "username": "notify_slack_test",
+    }
+]
+
+snapshots[
     "test_sns_get_slack_message_payload_snapshots message_cloudwatch_alarm.json"
 ] = [
     {
@@ -398,6 +556,57 @@ snapshots[
                     },
                 ],
                 "text": "AWS GuardDuty Finding - SAMPLE Unprotected port on EC2 instance i-123123123 is being probed",
+            }
+        ],
+        "channel": "slack_testing_sandbox",
+        "icon_emoji": ":aws:",
+        "username": "notify_slack_test",
+    }
+]
+
+snapshots[
+    "test_sns_get_slack_message_payload_snapshots message_ssm_run_command_event.json"
+] = [
+    {
+        "attachments": [
+            {
+                "color": "good",
+                "fallback": "EC2 Run Command Notification  us-east-1",
+                "fields": [
+                    {
+                        "short": False,
+                        "title": "Command Id",
+                        "value": "`6f69316a-e502-5a20-99bc-2408825b6dee`",
+                    },
+                    {
+                        "short": True,
+                        "title": "Document Name",
+                        "value": "`AWS-RunPatchBaseline`",
+                    },
+                    {
+                        "short": True,
+                        "title": "Instance Id",
+                        "value": "`i-99999999999999999`",
+                    },
+                    {
+                        "short": True,
+                        "title": "Requested Time",
+                        "value": "`2023-12-14T10:48:47.127Z`",
+                    },
+                    {
+                        "short": True,
+                        "title": "Event Time",
+                        "value": "`2023-12-14T10:52:22.114Z`",
+                    },
+                    {"short": True, "title": "Status", "value": "`Success`"},
+                    {"short": True, "title": "Detailed Status", "value": "`Success`"},
+                    {
+                        "short": False,
+                        "title": "Link to Event",
+                        "value": "https://console.aws.amazon.com/systems-manager/run-command/6f69316a-e502-5a20-99bc-2408825b6dee?region=us-east-1",
+                    },
+                ],
+                "text": "EC2 Run Command Notification us-east-1",
             }
         ],
         "channel": "slack_testing_sandbox",
