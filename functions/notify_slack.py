@@ -265,12 +265,14 @@ def format_aws_health(message: Dict[str, Any], region: str) -> Dict[str, Any]:
         ],
     }
 
+
 class SSMRunCommandStatus(Enum):
     """Maps System Manager Run Command status to Slack message format color"""
 
     Success = "good"
     TimedOut = "danger"
     Failed = "danger"
+
 
 def format_ssm_run_command(message: Dict[str, Any], region: str) -> Dict[str, Any]:
     """
@@ -282,14 +284,14 @@ def format_ssm_run_command(message: Dict[str, Any], region: str) -> Dict[str, An
     """
 
     return {
-        "color": SSMRunCommandStatus[message.get('status')].value,
+        "color": SSMRunCommandStatus[message.get("status")].value,
         "text": f"EC2 Run Command Notification {region}",
         "fallback": f"EC2 Run Command Notification  {region}",
         "fields": [
-            {   
-                "title": "Command Id", 
+            {
+                "title": "Command Id",
                 "value": f"`{message.get('commandId')}`",
-                "short": True
+                "short": True,
             },
             {
                 "title": "Region",
@@ -325,7 +327,7 @@ def format_ssm_run_command(message: Dict[str, Any], region: str) -> Dict[str, An
                 "title": "Detailed Status",
                 "value": f"`{message.get('detailedStatus')}`",
                 "short": False,
-            }
+            },
         ],
     }
 
