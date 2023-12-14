@@ -242,18 +242,17 @@ snapshots[
                 "fallback": "EC2 Run Command Notification  us-east-1",
                 "fields": [
                     {
-                        "short": True,
+                        "short": False,
                         "title": "Command Id",
                         "value": "`6f69316a-e502-5a20-99bc-2408825b6dee`",
                     },
-                    {"short": True, "title": "Region", "value": "`us-east-1`"},
                     {
                         "short": False,
                         "title": "Document Name",
                         "value": "`AWS-RunPatchBaseline`",
                     },
                     {
-                        "short": False,
+                        "short": True,
                         "title": "Instance Id",
                         "value": "`i-99999999999999999`",
                     },
@@ -267,8 +266,8 @@ snapshots[
                         "title": "Event Time",
                         "value": "`2023-12-14T10:52:22.114Z`",
                     },
-                    {"short": False, "title": "Status", "value": "`Failed`"},
-                    {"short": False, "title": "Detailed Status", "value": "`Failed`"},
+                    {"short": True, "title": "Status", "value": "`Failed`"},
+                    {"short": True, "title": "Detailed Status", "value": "`Failed`"},
                 ],
                 "text": "EC2 Run Command Notification us-east-1",
             }
@@ -289,18 +288,17 @@ snapshots[
                 "fallback": "EC2 Run Command Notification  us-east-1",
                 "fields": [
                     {
-                        "short": True,
+                        "short": False,
                         "title": "Command Id",
                         "value": "`6f69316a-e502-5a20-99bc-2408825b6dee`",
                     },
-                    {"short": True, "title": "Region", "value": "`us-east-1`"},
                     {
                         "short": False,
                         "title": "Document Name",
                         "value": "`AWS-RunPatchBaseline`",
                     },
                     {
-                        "short": False,
+                        "short": True,
                         "title": "Instance Id",
                         "value": "`i-99999999999999999`",
                     },
@@ -314,8 +312,8 @@ snapshots[
                         "title": "Event Time",
                         "value": "`2023-12-14T10:52:22.114Z`",
                     },
-                    {"short": False, "title": "Status", "value": "`Success`"},
-                    {"short": False, "title": "Detailed Status", "value": "`Success`"},
+                    {"short": True, "title": "Status", "value": "`Success`"},
+                    {"short": True, "title": "Detailed Status", "value": "`Success`"},
                 ],
                 "text": "EC2 Run Command Notification us-east-1",
             }
@@ -336,18 +334,17 @@ snapshots[
                 "fallback": "EC2 Run Command Notification  us-east-1",
                 "fields": [
                     {
-                        "short": True,
+                        "short": False,
                         "title": "Command Id",
                         "value": "`6f69316a-e502-5a20-99bc-2408825b6dee`",
                     },
-                    {"short": True, "title": "Region", "value": "`us-east-1`"},
                     {
                         "short": False,
                         "title": "Document Name",
                         "value": "`AWS-RunPatchBaseline`",
                     },
                     {
-                        "short": False,
+                        "short": True,
                         "title": "Instance Id",
                         "value": "`i-99999999999999999`",
                     },
@@ -361,9 +358,9 @@ snapshots[
                         "title": "Event Time",
                         "value": "`2023-12-14T10:52:22.114Z`",
                     },
-                    {"short": False, "title": "Status", "value": "`TimedOut`"},
+                    {"short": True, "title": "Status", "value": "`TimedOut`"},
                     {
-                        "short": False,
+                        "short": True,
                         "title": "Detailed Status",
                         "value": "`DeliveryTimedOut`",
                     },
@@ -562,18 +559,17 @@ snapshots[
                 "fallback": "EC2 Run Command Notification  us-east-1",
                 "fields": [
                     {
-                        "short": True,
+                        "short": False,
                         "title": "Command Id",
                         "value": "`6f69316a-e502-5a20-99bc-2408825b6dee`",
                     },
-                    {"short": True, "title": "Region", "value": "`us-east-1`"},
                     {
                         "short": False,
                         "title": "Document Name",
                         "value": "`AWS-RunPatchBaseline`",
                     },
                     {
-                        "short": False,
+                        "short": True,
                         "title": "Instance Id",
                         "value": "`i-99999999999999999`",
                     },
@@ -587,8 +583,8 @@ snapshots[
                         "title": "Event Time",
                         "value": "`2023-12-14T10:52:22.114Z`",
                     },
-                    {"short": False, "title": "Status", "value": "`Success`"},
-                    {"short": False, "title": "Detailed Status", "value": "`Success`"},
+                    {"short": True, "title": "Status", "value": "`Success`"},
+                    {"short": True, "title": "Detailed Status", "value": "`Success`"},
                 ],
                 "text": "EC2 Run Command Notification us-east-1",
             }
