@@ -247,7 +247,7 @@ snapshots[
                         "value": "`6f69316a-e502-5a20-99bc-2408825b6dee`",
                     },
                     {
-                        "short": False,
+                        "short": True,
                         "title": "Document Name",
                         "value": "`AWS-RunPatchBaseline`",
                     },
@@ -293,7 +293,7 @@ snapshots[
                         "value": "`6f69316a-e502-5a20-99bc-2408825b6dee`",
                     },
                     {
-                        "short": False,
+                        "short": True,
                         "title": "Document Name",
                         "value": "`AWS-RunPatchBaseline`",
                     },
@@ -339,7 +339,7 @@ snapshots[
                         "value": "`6f69316a-e502-5a20-99bc-2408825b6dee`",
                     },
                     {
-                        "short": False,
+                        "short": True,
                         "title": "Document Name",
                         "value": "`AWS-RunPatchBaseline`",
                     },
@@ -564,7 +564,7 @@ snapshots[
                         "value": "`6f69316a-e502-5a20-99bc-2408825b6dee`",
                     },
                     {
-                        "short": False,
+                        "short": True,
                         "title": "Document Name",
                         "value": "`AWS-RunPatchBaseline`",
                     },
