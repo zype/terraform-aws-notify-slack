@@ -267,6 +267,7 @@ def format_aws_health(message: Dict[str, Any], region: str) -> Dict[str, Any]:
         ],
     }
 
+
 class SSMRunCommandStatus(Enum):
     """Maps System Manager Run Command status to Slack message format color"""
 
