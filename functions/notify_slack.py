@@ -11,6 +11,7 @@ import base64
 import json
 import logging
 import os
+import re
 import urllib.parse
 import urllib.request
 from enum import Enum
@@ -266,7 +267,6 @@ def format_aws_health(message: Dict[str, Any], region: str) -> Dict[str, Any]:
         ],
     }
 
-
 class SSMRunCommandStatus(Enum):
     """Maps System Manager Run Command status to Slack message format color"""
 
@@ -336,6 +336,66 @@ def format_ssm_run_command(message: Dict[str, Any], region: str) -> Dict[str, An
             },
         ],
     }
+
+
+def aws_backup_field_parser(message: str) -> Dict[str, str]:
+    """
+    Parser for AWS Backup event message. It extracts the fields from the message and returns a dictionary.
+
+    :params message: message containing AWS Backup event
+    :returns: dictionary containing the fields extracted from the message
+    """
+    # Order is somewhat important, working in reverse order of the message payload
+    # to reduce right most matched values
+    field_names = {
+        "BackupJob ID": r"(BackupJob ID : ).*",
+        "Resource ARN": r"(Resource ARN : ).*[.]",
+        "Recovery point ARN": r"(Recovery point ARN: ).*[.]",
+    }
+    fields = {}
+
+    for fname, freg in field_names.items():
+        match = re.search(freg, message)
+        if match:
+            value = match.group(0).split(" ")[-1]
+            fields[fname] = value.removesuffix(".")
+
+            # Remove the matched field from the message
+            message = message.replace(match.group(0), "")
+
+    return fields
+
+
+def format_aws_backup(message: str) -> Dict[str, Any]:
+    """
+    Format AWS Backup event into Slack message format
+
+    :params message: SNS message body containing AWS Backup event
+    :returns: formatted Slack message payload
+    """
+
+    fields: list[Dict[str, Any]] = []
+    attachments = {}
+
+    title = message.split(".")[0]
+
+    if "failed" in title:
+        title = f"⚠️ {title}"
+
+    if "completed" in title:
+        title = f"✅ {title}"
+
+    fields.append({"title": title})
+
+    backup_fields = aws_backup_field_parser(message)
+
+    for k, v in backup_fields.items():
+        fields.append({"value": k, "short": False})
+        fields.append({"value": f"`{v}`", "short": False})
+
+    attachments["fields"] = fields  # type: ignore
+
+    return attachments
 
 
 def format_default(
@@ -418,6 +478,9 @@ def get_slack_message_payload(
 
     elif "documentName" in message:
         notification = format_ssm_run_command(message=message, region=region)
+
+    elif subject == "Notification from AWS Backup":
+        notification = format_aws_backup(message=str(message))
         attachment = notification
 
     elif "attachments" in message or "text" in message:
