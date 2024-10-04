@@ -20,6 +20,9 @@ from urllib.error import HTTPError
 
 import boto3
 
+import http.client
+http.client.HTTPConnection.debuglevel = 1
+
 # Set default region if not provided
 REGION = os.environ.get("AWS_REGION", "us-east-1")
 
