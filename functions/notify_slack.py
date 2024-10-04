@@ -20,12 +20,6 @@ from urllib.error import HTTPError
 
 import boto3
 
-# In debug mode logs requests and responses
-DEBUG = os.getenv('DEBUG', '')
-if DEBUG:
-    opener = urllib.request.build_opener(urllib.request.HTTPHandler(debuglevel=1))
-    urllib.request.install_opener(opener)
-
 # Set default region if not provided
 REGION = os.environ.get("AWS_REGION", "us-east-1")
 
