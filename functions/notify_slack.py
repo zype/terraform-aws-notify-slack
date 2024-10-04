@@ -20,7 +20,10 @@ from urllib.error import HTTPError
 
 import boto3
 
-logging.getLogger("urllib3").setLevel(logging.DEBUG)
+opener = urllib.request.build_opener(
+    urllib.request.HTTPHandler(debuglevel=1),
+    urllib.request.HTTPSHandler(debuglevel=1))
+urllib.request.install_opener(opener)
 
 # Set default region if not provided
 REGION = os.environ.get("AWS_REGION", "us-east-1")
