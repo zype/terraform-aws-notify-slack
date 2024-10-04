@@ -484,6 +484,7 @@ def get_slack_message_payload(
 
     elif "documentName" in message:
         notification = format_ssm_run_command(message=message, region=region)
+        attachment = notification
 
     elif subject == "Notification from AWS Backup":
         notification = format_aws_backup(message=str(message))
