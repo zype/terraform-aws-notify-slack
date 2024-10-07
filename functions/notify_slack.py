@@ -289,7 +289,6 @@ def format_ssm_run_command(message: Dict[str, Any], region: str) -> Dict[str, An
     run_command_url = systems_manager_url.replace(
         "/home", f"/run-command/{message.get('commandId')}"
     )
-  
     return {
         "color": SSMRunCommandStatus[message.get("status", "<unknown>")].value,
         "text": f"EC2 Run Command Notification {region}",
