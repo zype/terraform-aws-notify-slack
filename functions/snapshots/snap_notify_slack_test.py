@@ -389,6 +389,71 @@ snapshots[
     }
 ]
 
+snapshots["test_sns_get_slack_message_payload_snapshots message_backup.json"] = [
+    {
+        "attachments": [
+            {
+                "fields": [
+                    {"title": "✅ An AWS Backup job was completed successfully"},
+                    {"short": False, "value": "BackupJob ID"},
+                    {"short": False, "value": "`1b2345b2-f22c-4dab-5eb6-bbc7890ed123`"},
+                    {"short": False, "value": "Resource ARN"},
+                    {
+                        "short": False,
+                        "value": "`arn:aws:ec2:us-west-1:123456789012:volume/vol-012f345df6789012e`",
+                    },
+                    {"short": False, "value": "Recovery point ARN"},
+                    {
+                        "short": False,
+                        "value": "`arn:aws:ec2:us-west-1:123456789012:volume/vol-012f345df6789012d`",
+                    },
+                ]
+            }
+        ],
+        "channel": "slack_testing_sandbox",
+        "icon_emoji": ":aws:",
+        "username": "notify_slack_test",
+    },
+    {
+        "attachments": [
+            {
+                "fields": [
+                    {"title": "⚠️ An AWS Backup job failed"},
+                    {"short": False, "value": "BackupJob ID"},
+                    {"short": False, "value": "`1b2345b2-f22c-4dab-5eb6-bbc7890ed123`"},
+                    {"short": False, "value": "Resource ARN"},
+                    {
+                        "short": False,
+                        "value": "`arn:aws:ec2:us-west-1:123456789012:volume/vol-012f345df6789012e`",
+                    },
+                ]
+            }
+        ],
+        "channel": "slack_testing_sandbox",
+        "icon_emoji": ":aws:",
+        "username": "notify_slack_test",
+    },
+    {
+        "attachments": [
+            {
+                "fields": [
+                    {"title": "⚠️ An AWS Backup job failed to complete in time"},
+                    {"short": False, "value": "BackupJob ID"},
+                    {"short": False, "value": "`1b2345b2-f22c-4dab-5eb6-bbc7890ed123`"},
+                    {"short": False, "value": "Resource ARN"},
+                    {
+                        "short": False,
+                        "value": "`arn:aws:ec2:us-west-1:123456789012:volume/vol-012f345df6789012e`",
+                    },
+                ]
+            }
+        ],
+        "channel": "slack_testing_sandbox",
+        "icon_emoji": ":aws:",
+        "username": "notify_slack_test",
+    },
+]
+
 snapshots[
     "test_sns_get_slack_message_payload_snapshots message_cloudwatch_alarm.json"
 ] = [

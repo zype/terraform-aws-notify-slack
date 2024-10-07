@@ -4,6 +4,12 @@ variable "putin_khuylo" {
   default     = true
 }
 
+variable "architectures" {
+  description = "Instruction set architecture for your Lambda function. Valid values are [\"x86_64\"] and [\"arm64\"]."
+  type        = list(string)
+  default     = null
+}
+
 variable "create" {
   description = "Whether to create all resources"
   type        = bool
@@ -274,4 +280,10 @@ variable "subscription_filter_policy_scope" {
   description = "(Optional) A valid filter policy scope MessageAttributes|MessageBody"
   type        = string
   default     = null
+}
+
+variable "trigger_on_package_timestamp" {
+  description = "(Optional) Whether or not to ignore the file timestamp when deciding to create the archive"
+  type        = bool
+  default     = false
 }
